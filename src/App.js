@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
+import store from "./redux/state";
 
 const App = (props) => {
   return (
@@ -20,15 +21,14 @@ const App = (props) => {
             <Routes>
               <Route
                 path="/dialogs"
-                element={<Dialogs state={props.state.dialogsPage} />}
+                element={<Dialogs store={props.store} />}
               />
               <Route
                 path="/profile"
                 element={
                   <Profile
                     profilePage={props.state.profilePage}
-                    addPost={props.addPost}
-                    updateNewPostText={props.updateNewPostText}
+                    dispatch={props.dispatch}
                   />
                 }
               />

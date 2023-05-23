@@ -1,14 +1,12 @@
 import React from "react";
-import { Route, BrowserRouter, Routes, Link } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
-import Dialogs from "./Components/Dialogs/Dialogs";
 import Header from "./Components/Header/Header";
 import Music from "./Components/Music/Music";
 import Navbar from "./Components/Navbar/Navbar";
 import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
-import store from "./redux/store";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 const App = (props) => {
@@ -22,13 +20,12 @@ const App = (props) => {
             <Routes>
               <Route
                 path="/dialogs"
-                element={<DialogsContainer store={props.store} />}
+                element={<DialogsContainer />}
               />
               <Route
                 path="/profile"
                 element={
-                  <Profile store={props.store}
-                  />
+                  <Profile />
                 }
               />
               <Route path="/news" element={<News />} />

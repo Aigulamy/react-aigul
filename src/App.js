@@ -8,6 +8,7 @@ import News from "./Components/News/News";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 const App = (props) => {
   return (
@@ -26,6 +27,12 @@ const App = (props) => {
                 path="/profile"
                 element={
                   <Profile />
+                }
+              />
+               <Route
+                path="/users"
+                element={
+                  <UsersContainer />
                 }
               />
               <Route path="/news" element={<News />} />

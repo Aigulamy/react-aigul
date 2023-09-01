@@ -1,21 +1,22 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./Components/Header/Header";
 import Music from "./Components/Music/Music";
 import Navbar from "./Components/Navbar/Navbar";
 import News from "./Components/News/News";
-import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
+import LoginPage from "./Components/Login/Login";
 
 const App = (props) => {
   return (
     <div>
       <BrowserRouter>
         <div className="app-wrapper">
-          <Header />
+          <HeaderContainer />
           <Navbar />
           <div className="app-wrapper-content">
             <Routes>
@@ -24,15 +25,21 @@ const App = (props) => {
                 element={<DialogsContainer />}
               />
               <Route
-                path="/profile"
+                path="/profile/:userId?"
                 element={
-                  <Profile />
+                  <ProfileContainer />
                 }
               />
                <Route
                 path="/users"
                 element={
                   <UsersContainer />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <LoginPage />
                 }
               />
               <Route path="/news" element={<News />} />
